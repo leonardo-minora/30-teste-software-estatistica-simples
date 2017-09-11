@@ -4,7 +4,11 @@ from statistics import *
 class StatisticsTest (unittest.TestCase):
   
     def test_integer_vector(self):
-        self.assertEquals(estatisticas(vec), True)
+        try:
+            estatisticas([1,2])
+            pass
+        except:
+            self.fail("Isso nao deveria ter acontecido")
     
     def test_is_not_a_vector(self):
         with self.assertRaises(TypeError):
